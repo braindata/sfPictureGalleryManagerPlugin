@@ -1,0 +1,31 @@
+/* 
+    Document   : picture_gallery
+    Created on : 25.10.2010, 13:53:41
+    Author     : Johannes
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+
+#gallery_container {float: left; width: 75%; min-height: 12em; height: 1000px; overflow: auto;  padding: 10px;}
+#gallery { } * html #gallery { height: 12em; } /* IE6 */
+.gallery.custom-state-active { background: #eee; }
+.gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.gallery li h5 { margin: 0 0 0.4em; cursor: move; }
+.gallery li a { float: right; }
+.gallery li a.ui-icon-zoomin { float: left; }
+.gallery li a.ui-icon-pencil { float: left; }
+.gallery li img { width: 100%; cursor: move; }
+
+#trash_container { float: right; width: 19%; min-height: 18em; padding: 1%;} * html #trash_container { height: 18em; } /* IE6 */
+#trash { min-height: 18em; padding: 1px; padding-top: 5px;} * html #trash { height: 18em; } /* IE6 */
+#trash_container { line-height: 16px; margin: 0 0 0.4em; }
+#trash_container .ui-icon { float: left; }
+#trash .gallery h5 { display: none; }
+
+#gallery_picture_actions {margin-top: 20px;}
+#gallery_picture_actions a {margin-right: 10px;}

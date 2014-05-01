@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="de" datatype="plaintext" original="messages" date="2010-12-14T15:50:38Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Update List</source>
+        <target>Sortierung speichern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Remove Items</source>
+        <target>Einträge löschen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Trash</source>
+        <target>Papierkorb</target>
+      </trans-unit>
+      <trans-unit>
+        <source>View larger image</source>
+        <target>Bild vergrößern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete this image</source>
+        <target>Bild entfernen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit image</source>
+        <target>Bild bearbeiten</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The gallery was resorted successfully!</source>
+        <target>Die Gallery wurde erfolgreich sortiert!</target>
+      </trans-unit>
+      <trans-unit>
+        <source>%s picture(s) deleted!</source>
+        <target>%s Bild(er) gelöscht</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The picture was saved successfully!</source>
+        <target>Das Bild wurde erfolreich gespeichert</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The picture %s was created successfully!</source>
+        <target>Das Bild %s wurde erfolgreich angelegt</target>
+      </trans-unit>
+            <trans-unit>
+        <source>Remove</source>
+        <target>Entfernen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit</source>
+        <target>Bearbeiten</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore</source>
+        <target>Wiederherstellen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Resize</source>
+        <target>Beschneiden und Speichern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save</source>
+        <target>Speichern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Upload Files</source>
+        <target>Dateien hochladen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Clear Files</source>
+        <target>Dateien löschen</target>
+      </trans-unit>
+      <trans-unit>
+        <source>File Queue</source>
+        <target>Warteschlange</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Really remove items?</source>
+        <target>Einträge wirklich löschen?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete Items</source>
+        <target>Alle Fotos löschen</target>
+      </trans-unit>
+    </body>
+  </file>
+  
+</xliff>
