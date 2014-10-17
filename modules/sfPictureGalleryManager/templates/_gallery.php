@@ -21,10 +21,12 @@
 </script>
 
 <div id="gallery_picture_actions">
-<a href="<?php echo $resortUrl ?>" id="resort" class="fg-button fg-button-icon-left"><?php echo __('Update List', null, 'sf_gallery_manager') ?></a>
-<a href="<?php echo $removeUrl ?>" id="delete" class="fg-button fg-button-icon-left"><?php echo __('Delete Items', null, 'sf_gallery_manager') ?></a>
-<a href="<?php echo $createUrl ?>" id="browse"><?php echo __('Choose Image', null, 'sf_gallery_manager') ?></a>
+  <a href="<?php echo $resortUrl ?>" id="resort" class="fg-button fg-button-icon-left"><?php echo __('Update List', null, 'sf_gallery_manager') ?></a>
+  <a href="javascript:void(0)" id="order_shuffle" class="fg-button fg-button-icon-left"><?php echo __('Mischen', null, 'sf_gallery_manager') ?></a>
+  <a href="javascript:void(0)" id="order_reverse" class="fg-button fg-button-icon-left"><?php echo __('Umkehren', null, 'sf_gallery_manager') ?></a>
 
+  <a href="<?php echo $removeUrl ?>" id="delete" class="fg-button fg-button-icon-left"><?php echo __('Delete Items', null, 'sf_gallery_manager') ?></a>
+  <a href="<?php echo $createUrl ?>" id="browse"><?php echo __('Choose Image', null, 'sf_gallery_manager') ?></a>
 </div>
 
 <div style="margin-top: 10px;">

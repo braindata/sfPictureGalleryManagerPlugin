@@ -88,6 +88,45 @@ function initButtons($gallery, $trash)
     return false;
   });
 
+  $( "#order_shuffle" ).button({
+    icons: {primary: "ui-icon-shuffle"}
+  }).click( function(){
+    $( "#resort" ).button("enable");
+
+    var items = new Array();
+    $( "#gallery > li" ).each(function(index){
+      items.push($(this));
+      $(this).remove();
+    });
+
+    items.shuffle();
+
+    $.each(items, function (key, value){
+      $gallery.append(value);
+      value.fadeTo('slow', 0.2).delay(500).fadeTo('slow', 1);
+
+    });
+  });
+
+  $( "#order_reverse" ).button({
+    icons: {primary: "ui-icon-arrowrefresh-1-n"}
+  }).click( function(){
+    $( "#resort" ).button("enable");
+
+    var items = new Array();
+    $( "#gallery > li" ).each(function(index){
+      items.push($(this));
+      $(this).remove();
+    });
+
+    items.reverse();
+
+    $.each(items, function (key, value){
+      $gallery.append(value);
+      value.fadeTo('slow', 0.2).delay(500).fadeTo('slow', 1);
+    });
+  });
+
   function updatePositions(){
     $( "#gallery > li" ).each(function(index){
       $(this).find( "h5" ).text(index + 1);
@@ -109,6 +148,18 @@ function initButtons($gallery, $trash)
 
     //alert(a.join("&"));
   }
+
+  function arrayShuffle(){
+    var tmp, rand;
+    for(var i =0; i < this.length; i++){
+      rand = Math.floor(Math.random() * this.length);
+      tmp = this[i];
+      this[i] = this[rand];
+      this[rand] = tmp;
+    }
+  }
+
+  Array.prototype.shuffle = arrayShuffle;
 
 }
 
@@ -294,6 +345,7 @@ function initGalleryManager($gallery, $trash)
 
       return false;
     });
+
   }
 
 
