@@ -103,7 +103,7 @@ class sfPictureGalleryManagerActions extends sfActions
       $user = Doctrine::getTable("sfGuardUser")->find($request->getParameter("user_id"));
       $this->getUser()->signIn($user);
 
-      $file = $request->getFiles("filename");
+      $file = $request->getFiles("file");
 
       $dim = array('w' => sfConfig::get("app_max_upload_dim_w"), 'h' => sfConfig::get("app_max_upload_dim_h"));
       $filename = $FileManager->save($file['tmp_name'], $file['name'], 'image/jpeg', array('dim' => $dim));

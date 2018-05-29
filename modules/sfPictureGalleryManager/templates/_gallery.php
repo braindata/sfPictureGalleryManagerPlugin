@@ -13,20 +13,41 @@
     _confirm_delete = '<?php echo __('Really remove items?', null, 'sf_gallery_manager') ?>';
 
     webdir = '<?php echo sfConfig::get("app_webdir"); ?>';
+    create_url = '<?php echo $createUrl ?>';
 
-    initFlash();
     initGalleryManager($gallery, $trash);
     initButtons($gallery, $trash);
+
+    Dropzone.autoDiscover = false;
+
+    var myDropzone = new Dropzone("div#dropzone-area", {
+      url: create_url,
+      parallelUploads: 1,
+      dictDefaultMessage: "Bilder für den Upload hier ablegen",
+      acceptedFiles: "image/*"
+    });
+
+    myDropzone.on("success", function(file, response) {
+      console.log(file);
+      console.log(response);
+      if (response.status){
+          console.log(response.message);
+          $gallery.append(response.content.item);
+          myDropzone.removeFile(file);
+      }
+    });
   });
+
 </script>
 
-<div id="gallery_picture_actions">
+<div style="margin-top: 10px;" id="dropzone-area" class="dropzone needsclick dz-clickable"></div>
+
+<div id="gallery_picture_actions" class="clearfix">
   <a href="<?php echo $resortUrl ?>" id="resort" class="fg-button fg-button-icon-left"><?php echo __('Update List', null, 'sf_gallery_manager') ?></a>
   <a href="javascript:void(0)" id="order_shuffle" class="fg-button fg-button-icon-left"><?php echo __('Mischen', null, 'sf_gallery_manager') ?></a>
   <a href="javascript:void(0)" id="order_reverse" class="fg-button fg-button-icon-left"><?php echo __('Umkehren', null, 'sf_gallery_manager') ?></a>
 
   <a href="<?php echo $removeUrl ?>" id="delete" class="fg-button fg-button-icon-left"><?php echo __('Delete Items', null, 'sf_gallery_manager') ?></a>
-  <a href="<?php echo $createUrl ?>" id="browse"><?php echo __('Choose Image', null, 'sf_gallery_manager') ?></a>
 </div>
 
 <div style="margin-top: 10px;">

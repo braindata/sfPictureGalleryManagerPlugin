@@ -29,3 +29,7 @@ root {
 
 #gallery_picture_actions {margin-top: 20px;}
 #gallery_picture_actions a {margin-right: 10px;}
+
+#dropzone-area {border: dashed;}
+#dropzone-area .dz-message {font-size: 18px; font-weight: bold;}
+

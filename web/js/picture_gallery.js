@@ -169,7 +169,6 @@ function initGalleryManager($gallery, $trash)
   galleryItemActions();
 
   initList();
-  initUploadify();
 
   function initList()
   {

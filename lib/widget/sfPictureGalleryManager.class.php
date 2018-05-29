@@ -14,17 +14,16 @@ class sfPictureGalleryManager extends sfWidgetForm {
   public function getStylesheets()
   {
     return array(
-        '/sfPictureGalleryManagerPlugin/css/picture_gallery.css' => 'all',
-        '/sfPictureGalleryManagerPlugin/css/uploadify.css' => 'all',
+      '/sfPictureGalleryManagerPlugin/css/dropzone.css' => 'all',
+      '/sfPictureGalleryManagerPlugin/css/picture_gallery.css' => 'all',
     );
   }
 
   public function getJavascripts()
   {
     return array(
-        '/sfPictureGalleryManagerPlugin/js/picture_gallery.js',
-        '/sfPictureGalleryManagerPlugin/js/jquery.uploadify.v2.1.0.min.js',
-        '/sfPictureGalleryManagerPlugin/js/swfobject'
+      '/sfPictureGalleryManagerPlugin/js/picture_gallery.js',
+      '/sfPictureGalleryManagerPlugin/js/dropzone.js'
     );
   }
 
