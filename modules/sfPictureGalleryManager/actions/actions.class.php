@@ -7,7 +7,7 @@ class sfPictureGalleryManagerActions extends sfActions
     $this->gallery_id = sfContext::getInstance()->getRequest()->getParameter('object_id');
     $this->gallery_class = sfContext::getInstance()->getRequest()->getParameter('object_class');
     
-    $this->Gallery = Doctrine::getTable($this->gallery_class)->findOneBy('id', $this->gallery_id);
+    $this->Gallery = Doctrine_Core::getTable($this->gallery_class)->findOneBy('id', $this->gallery_id);
   }
 
 
@@ -100,7 +100,7 @@ class sfPictureGalleryManagerActions extends sfActions
 
     if ($this->Gallery)
     {
-      $user = Doctrine::getTable("sfGuardUser")->find($request->getParameter("user_id"));
+      $user = Doctrine_Core::getTable("sfGuardUser")->find($request->getParameter("user_id"));
       $this->getUser()->signIn($user);
 
       $file = $request->getFiles("file");
