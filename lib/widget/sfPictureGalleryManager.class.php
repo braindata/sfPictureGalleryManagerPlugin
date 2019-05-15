@@ -45,7 +45,7 @@ class sfPictureGalleryManager extends sfWidgetForm {
         'createUrl'   => $controller->genUrl(array_merge(array("sf_route" => 'picture_gallery_create'), $param, array("user_id" => sfContext::getInstance()->getUser()->getId()))),
         'updateRoute' => "@picture_gallery_update",
         'editRoute'   => "@picture_gallery_edit",
-        'pictures'    => $object->getPictures("ASC"),
+        'pictures'    => $object->getGalleryPictures("ASC"),
         'Gallery'     => $object,
 
     );

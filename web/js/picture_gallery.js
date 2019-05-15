@@ -259,7 +259,7 @@ function initGalleryManager($gallery, $trash)
       var $h1 = $d.find( "h1" );
 
       $d.dialog({
-        width: 400,
+        width: 500,
         modal: true,
         resizable: false,
         title: $h1.text()
@@ -293,33 +293,31 @@ function initGalleryManager($gallery, $trash)
           $(this).dialog( "close" );
         }
       });
-      
 
-
-      if ($next.length != 0)
-      {
-        buttons.push({
-          text: ">",
-          click: function() {
-            $(this).dialog( "close" );
-            $link = $next.find("a.ui-icon-pencil");
-            editImage($link);
-          }
-        });
-      }     
-      
-      if ($prev.length != 0)
-      {
-        buttons.push({
-          text: "<",
-          click: function() {
+    if ($prev.length != 0)
+    {
+    buttons.push({
+        text: "<",
+        click: function() {
             $(this).dialog( "close" );
             $link = $prev.find("a.ui-icon-pencil");
             editImage($link);
-          }
-        });
-      }
-      
+        }
+    });
+    }
+
+    if ($next.length != 0)
+    {
+    buttons.push({
+        text: ">",
+        click: function() {
+        $(this).dialog( "close" );
+        $link = $next.find("a.ui-icon-pencil");
+        editImage($link);
+        }
+    });
+    }
+
       $d.dialog( "option", "buttons", buttons);
     });
   }
@@ -345,77 +343,6 @@ function initGalleryManager($gallery, $trash)
       return false;
     });
 
-  }
-
-
-  function initUploadify()
-  {
-    var $browse = $("#browse");
-    var buttonText = $browse.text();
-    var scriptUrl = $browse.attr("href");
-
-    $browse.uploadify({
-      'uploader'       : webdir+'/sfPictureGalleryManagerPlugin/swf/uploadify.swf',
-      'script'         : scriptUrl,
-      'cancelImg'      : webdir+'/sfPictureGalleryManagerPlugin/images/cancel.png',
-      'buttonImg'      : webdir+'/sfPictureGalleryManagerPlugin/images/browse_de.png',
-      'height'         : '27',
-      'width'          : '130',
-      'rollover'       : true,
-      'folder'         : 'uploads',
-      'fileDesc'       : 'Images',
-      'fileExt'         : '*.jpg;*.png;*.gif',
-      'buttonText'     : buttonText,
-      'fileDataName'   : 'filename',
-      'auto'           : false,
-      'multi'          : true,
-      'onComplete'     : function(event, queueID, fileObj, response, data){
-        var data = jQuery.parseJSON(response);
-        if (data.status && data.content){
-          if (data.content.item){
-            $gallery.append( data.content.item );
-            document.getElementById('gallery_container').scrollTop = $("#gallery").height();
-          }
-        }
-        //$('#testing').val(response);
-      },
-      'onAllComplete'  : function (event, data){
-        $("#browseQueue").fadeOut(function(){
-          $("#browseQueue").dialog( "close" );
-          galleryItemActions();
-        });
-      },
-      'onSelectOnce'   : function (event, data){
-
-        $queue = $("#browseQueue");
-
-        $queue.dialog({
-          width: 410,
-          height: 300,
-          modal: true,
-          position: top,
-          resizable: false,
-          title: _selected_files
-        });
-
-        $queue.dialog( "option", "buttons",
-        [
-          {
-            text: _upload_files,
-            click: function(){$browse.uploadifyUpload();}
-          },
-          {
-            text: _clear_files,
-            click: function(){
-              $browse.uploadifyClearQueue();
-              $(this).fadeOut(function(){
-               $(this).dialog( "close" );
-              });
-            }
-          }
-        ]);
-      }
-    });
   }
 
 }
