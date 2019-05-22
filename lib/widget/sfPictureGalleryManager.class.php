@@ -16,6 +16,7 @@ class sfPictureGalleryManager extends sfWidgetForm {
     return array(
       '/sfPictureGalleryManagerPlugin/css/dropzone.css' => 'all',
       '/sfPictureGalleryManagerPlugin/css/picture_gallery.css' => 'all',
+      'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css' => 'all'
     );
   }
 
@@ -23,7 +24,8 @@ class sfPictureGalleryManager extends sfWidgetForm {
   {
     return array(
       '/sfPictureGalleryManagerPlugin/js/picture_gallery.js',
-      '/sfPictureGalleryManagerPlugin/js/dropzone.js'
+      '/sfPictureGalleryManagerPlugin/js/dropzone.js',
+      'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js'
     );
   }
 

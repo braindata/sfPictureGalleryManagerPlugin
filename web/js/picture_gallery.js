@@ -129,10 +129,11 @@ function initButtons($gallery, $trash)
 
   function updatePositions(){
     $( "#gallery > li" ).each(function(index){
-      $(this).find( "h5" ).text(index + 1);
+        $num = "#"+(index + 1);
+      $(this).find( "h5" ).text($num);
+      $(this).find( "[data-fancybox]").attr("data-caption",$num);
     });
   }
-
 
   function serializeTrash(){
     var a = [];
@@ -332,7 +333,7 @@ function initGalleryManager($gallery, $trash)
       if ( $target.is( "a.ui-icon-trash" ) ) {
         deleteImage( $item );
       } else if ( $target.is( "a.ui-icon-zoomin" ) ) {
-        $target.fancybox();
+        //$target.fancybox();
         $target.triggerHandler('click');
       } else if ( $target.is( "a.ui-icon-pencil" ) ) {
         editImage( $target );
@@ -344,5 +345,12 @@ function initGalleryManager($gallery, $trash)
     });
 
   }
+
+    $('[data-fancybox="gallery"]').fancybox({
+        onInit : function( instance, current ) {
+            console.info( instance );
+            //instance.update();
+        }
+    });
 
 }
